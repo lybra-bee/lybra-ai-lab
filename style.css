@@ -1,4 +1,4 @@
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
+/* ===== БАЗОВЫЕ СТИЛИ С ФОНАМИ ===== */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -11,17 +11,17 @@
     --border-color: #e1e8ed;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: var(--bg-color);
     color: var(--text-color);
+    /* Сетчатый фон для всего тела */
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(52, 152, 219, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 85% 30%, rgba(231, 76, 60, 0.03) 0%, transparent 20%),
+        radial-gradient(circle at 50% 80%, rgba(46, 204, 113, 0.03) 0%, transparent 20%);
+    background-attachment: fixed;
 }
 
 .container {
@@ -30,9 +30,13 @@ body {
     padding: 0 20px;
 }
 
-/* ===== ЧИСТАЯ ШАПКА ===== */
+/* ===== ШАПКА С ТЕМАТИЧЕСКИМ ФОНОМ ===== */
 header {
-    background: linear-gradient(135deg, var(--primary-color), #1a2530);
+    background: 
+        /* Основной градиент */
+        linear-gradient(135deg, var(--primary-color), #1a2530),
+        /* Текстура нейросети */
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3Ccircle cx='50' cy='20' r='1'/%3E%3Ccircle cx='10' cy='40' r='1'/%3E%3Ccircle cx='40' cy='50' r='1'/%3E%3Ccircle cx='20' cy='10' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     color: white;
     padding: 3rem 0;
     text-align: center;
@@ -40,15 +44,26 @@ header {
     overflow: hidden;
 }
 
+/* Добавляем эффект "цифрового потока" */
 header::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2336368b' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-    opacity: 0.1;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: shimmer 8s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
 }
 
 header .container {
@@ -81,15 +96,18 @@ header p {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
+    backdrop-filter: blur(10px);
 }
 
-/* ===== НАВИГАЦИЯ ===== */
+/* ===== НАВИГАЦИЯ С ПОЛУПРОЗРАЧНЫМ ФОНОМ ===== */
 .main-nav {
-    background: var(--primary-color);
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .main-nav ul {
@@ -105,17 +123,51 @@ header p {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     font-weight: 500;
+    position: relative;
 }
 
 .main-nav a:hover {
     background: rgba(255,255,255,0.1);
 }
 
-/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover::after {
+    width: 80%;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ С ЛЕГКИМ ФОНОМ ===== */
 main {
     padding: 2rem 0;
+    position: relative;
+}
+
+/* Добавляем легкий фон для основного контента */
+main::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(52, 152, 219, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(231, 76, 60, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 40% 80%, rgba(46, 204, 113, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 section {
@@ -123,8 +175,23 @@ section {
     margin: 2rem 0;
     padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     border: 1px solid var(--border-color);
+    position: relative;
+    z-index: 1;
+}
+
+/* Легкий градиентный фон для секций */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 10px 10px 0 0;
+    z-index: 2;
 }
 
 h2 {
@@ -149,35 +216,61 @@ h2 {
     border-radius: 10px;
     border: 1px solid var(--border-color);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
+    overflow: hidden;
+}
+
+/* Легкий фон для карточек железа */
+.hardware-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hardware-item:hover::before {
+    opacity: 1;
 }
 
 .hardware-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
 
 .hardware-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     display: block;
+    position: relative;
+    z-index: 2;
 }
 
 .hardware-item h3 {
     color: var(--primary-color);
     margin-bottom: 0.8rem;
     font-size: 1.3rem;
+    position: relative;
+    z-index: 2;
 }
 
 .hardware-item p {
     margin-bottom: 0.5rem;
     font-weight: 500;
+    position: relative;
+    z-index: 2;
 }
 
 .hardware-item small {
     color: #666;
     font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== СИСТЕМНЫЕ ЗАМЕТКИ ===== */
@@ -186,6 +279,21 @@ h2 {
     padding: 2rem;
     border-radius: 10px;
     border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.system-notes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(45deg, transparent 95%, rgba(52, 152, 219, 0.1) 95%),
+        linear-gradient(-45deg, transparent 95%, rgba(46, 204, 113, 0.1) 95%);
+    border-radius: 10px;
+    pointer-events: none;
 }
 
 .system-notes h3 {
@@ -193,12 +301,16 @@ h2 {
     margin-bottom: 1.5rem;
     text-align: center;
     font-size: 1.4rem;
+    position: relative;
+    z-index: 2;
 }
 
 .notes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .note-item {
@@ -209,6 +321,7 @@ h2 {
     background: white;
     border-radius: 8px;
     border-left: 4px solid var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .note-icon {
@@ -223,17 +336,35 @@ h2 {
     border-radius: 10px;
     margin: 1.5rem 0;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     border-left: 4px solid var(--success-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.experiment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.experiment-card:hover::before {
+    left: 100%;
 }
 
 .experiment-card.upcoming {
     border-left-color: var(--warning-color);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .experiment-card:hover {
     transform: translateX(5px);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
 }
 
 .experiment-header {
@@ -299,11 +430,30 @@ h2 {
     border-radius: 10px;
     text-align: center;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.result-item:hover::before {
+    opacity: 1;
 }
 
 .result-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .result-value {
@@ -311,11 +461,15 @@ h2 {
     font-weight: bold;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .result-label {
     color: #666;
     font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== КНОПКИ ===== */
@@ -328,21 +482,54 @@ h2 {
     padding: 0.8rem 1.5rem;
     text-decoration: none;
     border-radius: 6px;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
     font-weight: 500;
     border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
     background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
-/* ===== ПОДВАЛ ===== */
+/* ===== ПОДВАЛ С ТЕМАТИЧЕСКИМ ФОНОМ ===== */
 footer {
-    background: var(--primary-color);
+    background: 
+        linear-gradient(135deg, #1a2530, var(--primary-color)),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3Ccircle cx='45' cy='15' r='0.5'/%3E%3Ccircle cx='15' cy='45' r='0.5'/%3E%3Ccircle cx='35' cy='45' r='0.5'/%3E%3Ccircle cx='25' cy='15' r='0.5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     color: white;
     margin-top: 4rem;
+    position: relative;
+}
+
+/* Добавляем верхнюю границу с градиентом */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--success-color));
 }
 
 .footer-content {
@@ -350,6 +537,8 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     padding: 3rem 0 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-section h3 {
@@ -381,6 +570,8 @@ footer {
     padding: 2rem 0;
     text-align: center;
     color: #ccc;
+    position: relative;
+    z-index: 2;
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
@@ -434,6 +625,11 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+    
+    /* Упрощаем анимации на мобильных */
+    header::before {
+        animation: shimmer 15s infinite linear;
     }
 }
 
