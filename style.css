@@ -1,4 +1,4 @@
-/* style.css */
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -6,8 +6,9 @@
     --success-color: #27ae60;
     --warning-color: #f39c12;
     --text-color: #333;
-    --bg-color: #f8f9fa;
-    --card-bg: #ffffff;
+    --bg-color: #0f0f1a;
+    --card-bg: #1a1a2e;
+    --header-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 * {
@@ -19,8 +20,9 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background: var(--bg-color);
+    color: #e0e0e0;
+    overflow-x: hidden;
 }
 
 .container {
@@ -29,387 +31,25 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+/* ===== АНИМИРОВАННАЯ ШАПКА ===== */
 header {
-    background: linear-gradient(135deg, var(--primary-color), #1a2530);
-    color: white;
-    padding: 3rem 0;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-/* Navigation */
-.main-nav {
-    background: var(--primary-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.main-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.main-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 1rem 0;
-    display: block;
-    transition: color 0.3s;
-}
-
-.main-nav a:hover {
-    color: var(--secondary-color);
-}
-
-/* Sections */
-section {
-    margin: 3rem 0;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-}
-
-/* Hardware Grid */
-.hardware-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.hardware-item {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-left: 4px solid var(--secondary-color);
-}
-
-.hardware-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.hardware-item small {
-    color: #666;
-    font-size: 0.9rem;
-}
-
-/* System Notes */
-.system-notes {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 2rem 0;
-}
-
-.system-notes ul {
-    list-style-position: inside;
-    margin-top: 1rem;
-}
-
-.system-notes li {
-    margin-bottom: 0.5rem;
-}
-
-/* Image Gallery */
-.image-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.image-gallery img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s;
-}
-
-.image-gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Experiment Cards */
-.experiment-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    margin: 1.5rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.experiment-card.upcoming {
-    opacity: 0.7;
-    border-left: 4px solid var(--warning-color);
-}
-
-.experiment-card:not(.upcoming) {
-    border-left: 4px solid var(--success-color);
-}
-
-.experiment-meta {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.status {
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
-.status.success {
-    background: #d4edda;
-    color: #155724;
-}
-
-.status.planning {
-    background: #fff3cd;
-    color: #856404;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    background: var(--secondary-color);
-    color: white;
-    padding: 0.7rem 1.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #2980b9;
-}
-
-/* Footer */
-footer {
-    background: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: 3rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .main-nav ul {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .hardware-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .experiment-meta {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    header h1 {
-        font-size: 2rem;
-    }
-}
-/* Дополнительные стили для страницы эксперимента */
-.experiment-detail section {
-    margin: 2.5rem 0;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.info-item {
-    background: var(--card-bg);
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.info-item h3 {
-    color: var(--primary-color);
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.code-block {
-    background: #1e1e1e;
-    color: #d4d4d4;
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-    overflow-x: auto;
-}
-
-.code-block pre {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-}
-
-.settings-list ul {
-    list-style-position: inside;
-    margin: 1rem 0;
-}
-
-.prompt-result {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 2rem 0;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 2rem;
-    align-items: start;
-}
-
-.prompt-info h4 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.prompt-text, .prompt-params {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 5px;
-    margin: 0.5rem 0;
-    border-left: 3px solid var(--secondary-color);
-}
-
-.result-image {
-    text-align: center;
-}
-
-.result-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.image-meta {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.performance-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.stat-item {
-    background: var(--card-bg);
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.stat-item h4 {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-.monitoring-image {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.monitoring-image img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.conclusions-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin: 1.5rem 0;
-}
-
-.conclusion {
-    padding: 1.5rem;
-    border-radius: 8px;
-}
-
-.conclusion.positive {
-    background: #d4edda;
-    border-left: 4px solid var(--success-color);
-}
-
-.conclusion.challenges {
-    background: #fff3cd;
-    border-left: 4px solid var(--warning-color);
-}
-
-.conclusion h4 {
-    margin-bottom: 1rem;
-}
-
-.conclusion ul {
-    list-style-position: inside;
-}
-
-@media (max-width: 768px) {
-    .prompt-result {
-        grid-template-columns: 1fr;
-    }
-    
-    .conclusions-grid {
-        grid-template-columns: 1fr;
-    }
-    /* Анимированный градиент для шапки */
-header {
-    background: linear-gradient(
-        135deg,
-        #667eea 0%,
-        #764ba2 25%,
-        #f093fb 50%,
-        #f5576c 75%,
-        #4facfe 100%
-    );
+    background: var(--header-gradient);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     position: relative;
     overflow: hidden;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
 }
 
-/* Анимация градиента */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Добавляем технологичный паттерн поверх градиента */
+/* Технологичный паттерн поверх градиента */
 header::before {
     content: '';
     position: absolute;
@@ -418,25 +58,409 @@ header::before {
     right: 0;
     bottom: 0;
     background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 0),
-        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 0);
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 2px, transparent 0),
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 1px, transparent 0);
     background-size: 50px 50px, 30px 30px;
-    animation: float 20s linear infinite;
+    animation: float 30s linear infinite;
 }
 
 @keyframes float {
     0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(-50px, -50px) rotate(360deg); }
+    100% { transform: translate(-100px, -50px) rotate(360deg); }
 }
 
-/* Стиль для подвала с сеткой */
+header .container {
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+header p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+}
+
+.lab-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.lab-stats span {
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* ===== АНИМИРОВАННЫЕ НЕЙРОНЫ ===== */
+.neuron-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.neuron {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: neuronPulse 3s infinite;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+@keyframes neuronPulse {
+    0%, 100% { 
+        opacity: 0.3; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(2.5); 
+    }
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+.main-nav {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem 0;
+}
+
+.main-nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: var(--secondary-color);
+    background: rgba(255,255,255,0.1);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover::after {
+    width: 80%;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+main {
+    padding: 2rem 0;
+}
+
+section {
+    background: var(--card-bg);
+    margin: 2rem 0;
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* ===== СЕТКА ОБОРУДОВАНИЯ ===== */
+.hardware-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hardware-item {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hardware-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.hardware-item:hover::before {
+    left: 100%;
+}
+
+.hardware-item:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.hardware-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hardware-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.hardware-item p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.hardware-item small {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* ===== СИСТЕМНЫЕ ЗАМЕТКИ ===== */
+.system-notes {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.system-notes h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.note-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.note-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* ===== КАРТОЧКИ ЭКСПЕРИМЕНТОВ ===== */
+.experiment-card {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.experiment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--success-color);
+    border-radius: 4px 0 0 4px;
+}
+
+.experiment-card.upcoming::before {
+    background: var(--warning-color);
+}
+
+.experiment-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateX(5px);
+}
+
+.experiment-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.experiment-header h3 {
+    color: #ffffff;
+    flex-grow: 1;
+    margin: 0;
+}
+
+.status-badge {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-badge.success {
+    background: var(--success-color);
+    color: white;
+}
+
+.status-badge.planning {
+    background: var(--warning-color);
+    color: white;
+}
+
+.experiment-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.experiment-meta .date,
+.experiment-meta .performance {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #aaa;
+}
+
+/* ===== РЕЗУЛЬТАТЫ ===== */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.result-item {
+    background: rgba(255,255,255,0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.result-item:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-3px);
+}
+
+.result-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.result-label {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* ===== КНОПКИ ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* ===== УЛУЧШЕННЫЙ ПОДВАЛ ===== */
 footer {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    margin-top: 4rem;
     position: relative;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Добавляем сетку в подвал */
 footer::before {
     content: '';
     position: absolute;
@@ -448,9 +472,104 @@ footer::before {
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 20px 20px;
+    pointer-events: none;
 }
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 3rem 0 2rem;
+}
+
+.footer-section h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem 0;
+    text-align: center;
+    color: #aaa;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
     
-    .info-grid {
+    .hardware-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .experiment-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    .lab-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hardware-item {
+        padding: 1.5rem;
+    }
+    
+    header {
+        padding: 3rem 0;
     }
 }
