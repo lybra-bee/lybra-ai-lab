@@ -25,7 +25,7 @@ layout: default
             {% if experiment.performance %}
             <span class="performance">⚡ {{ experiment.performance }}</span>
             {% endif %}
-            <a href="{{ experiment.url }}" class="btn">Изучить эксперимент →</a>
+            <a href="{{ experiment.url | relative_url }}" class="btn">Изучить эксперимент →</a>
         </div>
     </div>
     {% endfor %}
