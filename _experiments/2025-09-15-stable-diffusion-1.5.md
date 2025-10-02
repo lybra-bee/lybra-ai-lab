@@ -2,7 +2,7 @@
 layout: experiment
 title: "Stable Diffusion 1.5 - Lybra AI Lab"
 date: 2024-12-15
-status: success
+status: Успешно
 performance: "12-18 секунд"
 description: "Первый эксперимент по генерации изображений на P102-100"
 ---
