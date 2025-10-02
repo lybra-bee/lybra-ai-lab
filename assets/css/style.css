@@ -107,5 +107,15 @@ section {
     box-shadow: 0 2px 20px rgba(0,0,0,0.08);
     border: 1px solid var(--border-color);
 }
+.terminal {
+    background-color: #000;   /* чёрный фон */
+    color: #fff;              /* белый текст */
+    padding: 1em;             /* отступы внутри блока */
+    border-radius: 5px;       /* скругление углов */
+    font-family: monospace;   /* моноширинный шрифт */
+    overflow-x: auto;         /* прокрутка по горизонтали */
+    line-height: 1.5;         /* чтобы текст не слипался */
+}
 
-/* Добавьте остальные стили из нашего предыдущего обсуждения */
+
+
