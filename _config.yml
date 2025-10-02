@@ -1,0 +1,26 @@
+title: "Lybra AI Lab"
+description: "Практические эксперименты с нейросетями на бюджетном железе"
+baseurl: "/lybra-ai-lab"
+url: "https://lybra-bee.github.io"
+
+# Настройки сборки
+markdown: kramdown
+permalink: pretty
+
+# Коллекции
+collections:
+  experiments:
+    output: true
+    permalink: /experiments/:path/
+
+# Данные
+defaults:
+  - scope:
+      path: ""
+      type: "experiments"
+    values:
+      layout: "experiment"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
