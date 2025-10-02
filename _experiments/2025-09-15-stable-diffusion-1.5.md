@@ -2,7 +2,7 @@
 layout: experiment
 title: "Stable Diffusion 1.5 - Lybra AI Lab"
 date: 2024-12-15
-status: Успешно
+status: success
 performance: "12-18 секунд"
 description: "Первый эксперимент по генерации изображений на P102-100"
 ---
@@ -42,7 +42,7 @@ python launch.py --precision full --no-half \
 **Промпт:** "magical forest with glowing mushrooms, ancient ruins, misty atmosphere, fantasy art, detailed, epic composition, 4k"  
 **Параметры:** Steps: 20, Sampler: Euler a, CFG: 7.5  
 **Время генерации:** 14 секунд  
-![Фэнтези-пейзаж](/_experiments/images/fantasy-landscape.jpg)
+![Фэнтези-пейзаж]({{ site.baseurl }}/_experiments/images/fantasy-landscape.jpg)
 
 ### Промпт #2: Киберпанк-город
 **Промпт:** "cyberpunk city street at night, neon lights, rain, futuristic buildings, crowded, cinematic lighting, Blade Runner style"  
