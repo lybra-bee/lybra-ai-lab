@@ -1,41 +1,35 @@
 title: "Lybra AI Lab"
 description: "Практические эксперименты с нейросетями на бюджетном железе"
-baseurl: "/lybra-ai-lab" 
+baseurl: "/lybra-ai-lab"
 url: "https://lybra-bee.github.io"
 
-# Настройки сборки [citation:8][citation:10]
+# Настройки сборки
 markdown: kramdown
 permalink: pretty
 
-# Коллекции [citation:2]
+# Коллекции
 collections:
   experiments:
     output: true
     permalink: /experiments/:path/
 
-# Данные [citation:3]
+# Данные - ИСПРАВЛЕННЫЙ РАЗДЕЛ
 defaults:
   - scope:
-      path: "" # Применяется ко всем файлам
+      path: ""
     values:
       layout: "default"
   - scope:
       path: ""
-      type: "experiments" # Специальные настройки для коллекции experiments
+      type: "experiments"
     values:
       layout: "experiment"
 
-# Настройки для GitHub Pages [citation:10]
+# ДОБАВИТЬ ЭТИ НАСТРОЙКИ
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Исключаемые файлы [citation:10]
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+# Настройка для GitHub Pages
+repository: lybra-bee/lybra-ai-lab
