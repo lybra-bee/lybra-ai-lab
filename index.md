@@ -1,3 +1,7 @@
+---
+layout: home
+title: "Lybra AI Lab - Главная"
+---
 <!DOCTYPE html>
 <html lang="ru">
 <head>
