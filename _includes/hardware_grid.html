@@ -1,12 +1,38 @@
 <div class="hardware-grid">
-    {% for item in site.data.hardware %}
     <div class="hardware-item">
-        <div class="hardware-icon">{{ item.icon }}</div>
-        <h3>{{ item.name }}</h3>
-        <p><strong>{{ item.spec }}</strong> - {{ item.description }}</p>
-        <small>{{ item.details }}</small>
+        <div class="hardware-icon">🔌</div>
+        <h3>Материнская плата</h3>
+        <p><strong>X99</strong> - серверная платформа</p>
+        <small>LGA 2011-3, поддержка ECC памяти</small>
     </div>
-    {% endfor %}
+    
+    <div class="hardware-item">
+        <div class="hardware-icon">🚀</div>
+        <h3>Процессор</h3>
+        <p><strong>Intel Xeon E5 2650v4</strong></p>
+        <small>12 ядер / 24 потока · 2.2 GHz · 30 MB cache · 105W TDP</small>
+    </div>
+    
+    <div class="hardware-item">
+        <div class="hardware-icon">💾</div>
+        <h3>Оперативная память</h3>
+        <p><strong>DDR4 32GB</strong></p>
+        <small>4x8GB · 2400 MHz · ECC Registered</small>
+    </div>
+    
+    <div class="hardware-item">
+        <div class="hardware-icon">🎯</div>
+        <h3>Вычислительная карта</h3>
+        <p><strong>Inno3D P102-100 10GB</strong></p>
+        <small>GP102 чип · 10GB GDDR5X · 320-bit · PCI-E x16</small>
+    </div>
+    
+    <div class="hardware-item">
+        <div class="hardware-icon">🖥️</div>
+        <h3>Карта вывода изображения</h3>
+        <p><strong>Radeon 560</strong></p>
+        <small>4GB GDDR5 · Подключена через PCI-E x1 райзер</small>
+    </div>
 </div>
 
 <div class="system-notes">
