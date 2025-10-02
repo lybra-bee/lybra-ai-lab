@@ -1,0 +1,32 @@
+<div class="hardware-grid">
+    {% for item in site.data.hardware %}
+    <div class="hardware-item">
+        <div class="hardware-icon">{{ item.icon }}</div>
+        <h3>{{ item.name }}</h3>
+        <p><strong>{{ item.spec }}</strong> - {{ item.description }}</p>
+        <small>{{ item.details }}</small>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="system-notes">
+    <h3>💡 Особенности конфигурации:</h3>
+    <div class="notes-grid">
+        <div class="note-item">
+            <span class="note-icon">⚡</span>
+            <span>P102-100 используется исключительно для вычислений в нейросетях</span>
+        </div>
+        <div class="note-item">
+            <span class="note-icon">🎮</span>
+            <span>Radeon 560 отвечает только за вывод изображения на монитор</span>
+        </div>
+        <div class="note-item">
+            <span class="note-icon">🏢</span>
+            <span>Серверная платформа X99 обеспечивает стабильность 24/7</span>
+        </div>
+        <div class="note-item">
+            <span class="note-icon">🛡️</span>
+            <span>ECC память предотвращает ошибки при длительных вычислениях</span>
+        </div>
+    </div>
+</div>
