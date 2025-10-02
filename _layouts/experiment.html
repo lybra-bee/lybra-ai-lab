@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="experiment-detail">
+    <header class="experiment-header">
+        <h1>{{ page.title }}</h1>
+        <div class="experiment-meta">
+            <span class="date">📅 {{ page.date | date: "%d %B %Y" }}</span>
+            {% if page.status %}
+            <span class="status-badge {{ page.status }}">{{ page.status_text | default: page.status }}</span>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="experiment-content">
+        {{ content }}
+    </div>
+
+    <footer class="experiment-footer">
+        <a href="{{ '/' | relative_url }}" class="btn">← Назад к экспериментам</a>
+    </footer>
+</article>
