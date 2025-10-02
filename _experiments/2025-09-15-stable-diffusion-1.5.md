@@ -2,7 +2,7 @@
 layout: experiment
 title: "Stable Diffusion 1.5 - Тестирование промптов и производительности"
 date: 2025-09-15
-status: success
+status: Успешно
 performance: "12-18 сек/изображение"
 description: "Полное тестирование генерации изображений на P102-100 с различными промптами и настройками"
 ---
