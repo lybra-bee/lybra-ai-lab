@@ -22,12 +22,12 @@ description: "Первый эксперимент по генерации изо
 
 ## ⚙️ Настройки запуска
 
-<pre><code>
+<pre class="terminal">
 python launch.py --precision full --no-half \
 --medvram --opt-split-attention \
 --disable-nan-check \
 --listen --port 7860
-</code></pre>
+</pre>
 
 **Параметры генерации:**
 - Разрешение: 512x512 пикселей
