@@ -1,35 +1,38 @@
 title: "Lybra AI Lab"
-description: "Практические эксперименты с нейросетями на бюджетном железе"
+description: "Лаборатория экспериментов с нейросетями"
 baseurl: "/lybra-ai-lab"
 url: "https://lybra-bee.github.io"
+github_username: "lybra-bee"
 
-# Настройки сборки
+theme: jekyll-theme-primer
 markdown: kramdown
 permalink: pretty
 
-# Коллекции
-collections:
-  experiments:
-    output: true
-    permalink: /experiments/:path/
+sass:
+  sass_dir: _sass
+  style: compressed
 
-# Данные - ИСПРАВЛЕННЫЙ РАЗДЕЛ
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
 defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
   - scope:
       path: ""
       type: "experiments"
     values:
       layout: "experiment"
+      permalink: /experiments/:title/
 
-# ДОБАВИТЬ ЭТИ НАСТРОЙКИ
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+collections:
+  experiments:
+    output: true
+    permalink: /experiments/:path/
 
-# Настройка для GitHub Pages
-repository: lybra-bee/lybra-ai-lab
+navigation:
+  - title: "🖥️ Лаборатория"
+    url: /
+  - title: "🔌 Оборудование"
+    url: /hardware.html
+  - title: "🏠 Основной сайт"
+    url: https://lybra-bee.github.io/
