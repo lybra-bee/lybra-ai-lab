@@ -16,18 +16,17 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+collections:
+  experiments:
+    output: true
+    permalink: /experiments/:path/
+
 defaults:
   - scope:
       path: ""
       type: "experiments"
     values:
       layout: "experiment"
-      permalink: /experiments/:title/
-
-collections:
-  experiments:
-    output: true
-    permalink: /experiments/:path/
 
 navigation:
   - title: "🖥️ Лаборатория"
