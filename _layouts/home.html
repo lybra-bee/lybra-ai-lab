@@ -1,32 +1,20 @@
 ---
 layout: default
 ---
-<section id="hardware" class="hardware-section">
-    <h2>🖥️ Конфигурация системы</h2>
-    {% include hardware-grid.html %}
-</section>
 
-<section id="experiments" class="experiments-section">
-    <h2>🔬 Последние эксперименты</h2>
-    
-    {% for experiment in site.experiments limit:3 %}
-    <div class="experiment-card {% if experiment.status == 'planning' %}upcoming{% endif %}">
-        <div class="experiment-header">
-            <h3>{{ experiment.title }}</h3>
-            <span class="status-badge {{ experiment.status }}">
-                {% if experiment.status == 'success' %}✅ Завершен
-                {% elsif experiment.status == 'planning' %}🔄 В разработке
-                {% else %}{{ experiment.status }}{% endif %}
-            </span>
-        </div>
-        <p>{{ experiment.description }}</p>
-        <div class="experiment-meta">
-            <span class="date">📅 {{ experiment.date | date: "%d %B %Y" }}</span>
-            {% if experiment.performance %}
-            <span class="performance">⚡ {{ experiment.performance }}</span>
-            {% endif %}
-            <a href="{{ experiment.url | relative_url }}" class="btn">Изучить эксперимент →</a>
+<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ '/assets/images/featured-bg.jpg' | relative_url }}');">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ site.title }}</h1>
+            <p class="hero-description">{{ site.description }}</p>
+            <div class="hero-actions">
+                <a href="#experiments" class="btn btn-primary">Смотреть эксперименты</a>
+                <a href="{{ '/hardware' | relative_url }}" class="btn btn-secondary">Оборудование</a>
+            </div>
         </div>
     </div>
-    {% endfor %}
 </section>
+
+<div class="container">
+    {{ content }}
+</div>
