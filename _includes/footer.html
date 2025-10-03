@@ -1,21 +1,25 @@
-<footer>
+<footer class="site-footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>🧪 Lybra AI Lab</h3>
-                <p>Практические эксперименты с нейросетями на бюджетном железе</p>
+                <h4>Lybra AI Lab</h4>
+                <p>Лаборатория экспериментов с нейросетями</p>
             </div>
             <div class="footer-section">
-                <h3>🔗 Ссылки</h3>
+                <h4>Ссылки</h4>
                 <ul>
-                    <li><a href="https://lybra-bee.github.io/">Основной сайт</a></li>
-                    <li><a href="{{ '/#hardware' | relative_url }}">Мое железо</a></li>
-                    <li><a href="{{ '/#experiments' | relative_url }}">Эксперименты</a></li>
+                    {% for item in site.navigation %}
+                    <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+                    {% endfor %}
                 </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Конфигурация</h4>
+                <p>Xeon E5 2650v4 + P102-100</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Lybra AI Lab. Открытые эксперименты с нейросетями на бюджетном железе.</p>
+            <p>&copy; 2024 Lybra AI Lab. Все эксперименты проводятся на собственном оборудовании.</p>
         </div>
     </div>
 </footer>
