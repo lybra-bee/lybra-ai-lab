@@ -1,0 +1,217 @@
+// Кнопки
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: $border-radius;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all $transition-fast;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    &-primary {
+        background: $accent-color;
+        color: white;
+        border-color: $accent-color;
+
+        &:hover {
+            background: $accent-hover;
+            border-color: $accent-hover;
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+        }
+    }
+
+    &-secondary {
+        background: transparent;
+        color: $accent-color;
+        border-color: $accent-color;
+
+        &:hover {
+            background: $accent-color;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+        }
+    }
+
+    &-outline {
+        background: transparent;
+        color: $text-color;
+        border-color: $border-color;
+
+        &:hover {
+            border-color: $accent-color;
+            color: $accent-color;
+        }
+    }
+}
+
+// Карточки
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: $spacing-unit * 1.5;
+    margin: $spacing-unit * 2 0;
+}
+
+.card {
+    background: $secondary-color;
+    border-radius: $border-radius;
+    padding: $spacing-unit * 1.5;
+    box-shadow: $shadow-md;
+    border: 1px solid $border-color;
+    transition: all $transition-normal;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-xl;
+        border-color: $accent-color;
+    }
+
+    &.success {
+        border-left: 4px solid $success-color;
+    }
+
+    &.warning {
+        border-left: 4px solid $warning-color;
+    }
+}
+
+// Страница эксперимента
+.experiment-page {
+    .breadcrumb {
+        margin-bottom: 1.5rem;
+        color: $text-muted;
+        font-size: 0.9rem;
+
+        a {
+            color: $accent-color;
+        }
+    }
+
+    .experiment-header {
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .experiment-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .experiment-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: $secondary-color;
+        padding: 0.5rem 1rem;
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
+    }
+
+    .experiment-description {
+        font-size: 1.2rem;
+        color: $text-muted;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .experiment-content {
+        max-width: 800px;
+        margin: 0 auto;
+
+        h2 {
+            margin-top: 3rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid $border-color;
+        }
+
+        h3 {
+            margin-top: 2rem;
+            color: $accent-color;
+        }
+    }
+
+    .experiment-footer {
+        margin-top: 3rem;
+        text-align: center;
+    }
+}
+
+// Галерея экспериментов
+.experiment-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-unit * 2;
+}
+
+.prompt-result {
+    background: $secondary-color;
+    border-radius: $border-radius;
+    padding: $spacing-unit * 1.5;
+    border-left: 4px solid $accent-color;
+    transition: all $transition-normal;
+
+    &:hover {
+        transform: translateX(4px);
+        box-shadow: $shadow-lg;
+    }
+
+    img {
+        margin-top: $spacing-unit;
+        border: 1px solid $border-color;
+        transition: transform $transition-normal;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+}
+
+// Конфигурация оборудования
+.hardware-item {
+    text-align: center;
+
+    .hardware-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hardware-description {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: $accent-color;
+    }
+
+    .hardware-details {
+        color: $text-muted;
+        font-size: 0.9rem;
+    }
+}
+
+// Навигация хлебных крошек
+.breadcrumb {
+    a {
+        color: $accent-color;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    
+    span {
+        color: $text-muted;
+    }
+}
