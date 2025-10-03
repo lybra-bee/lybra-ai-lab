@@ -1,10 +1,18 @@
-<header>
+<header class="site-header">
     <div class="container">
-        <h1>🧪 Lybra AI Lab</h1>
-        <p>Практические эксперименты с нейросетями на Xeon E5 2650v4 + P102-100 10GB</p>
-        <div class="lab-stats">
-            <span>🔄 Эксперименты в реальном времени</span>
-            <span>⚡ Показываю возможности бюджетного железа</span>
+        <div class="logo">
+            <a href="{{ '/' | relative_url }}">
+                <img src="{{ '/assets/images/logos/lybra-logo.svg' | relative_url }}" alt="Lybra AI Lab" class="logo-img">
+                <span class="logo-text">Lybra AI Lab</span>
+            </a>
         </div>
+        
+        <nav class="main-nav">
+            <ul>
+                {% for item in site.navigation %}
+                <li><a href="{{ item.url | relative_url }}" {% if item.url == page.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
     </div>
 </header>
