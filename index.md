@@ -1,203 +1,32 @@
 ---
 layout: home
-title: "Lybra AI Lab - Главная"
+title: "Lybra AI Lab"
+description: "Лаборатория экспериментов с нейросетями"
 ---
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lybra AI Lab | Эксперименты с нейросетями на бюджетном железе</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Анимированная шапка -->
-    <header>
-        <div class="container">
-            <h1>🧪 Lybra AI Lab</h1>
-            <p>Практические эксперименты с нейросетями на Xeon E5 2650v4 + P102-100 10GB</p>
-            <div class="lab-stats">
-                <span>🔄 Эксперименты в реальном времени</span>
-                <span>⚡ Показываю возможности бюджетного железа</span>
-            </div>
-        </div>
-        <div class="neuron-dots" id="neuronContainer"></div>
-    </header>
 
-    <nav class="main-nav">
-        <div class="container">
-            <ul>
-                <li><a href="#hardware">Мое железо</a></li>
-                <li><a href="#experiments">Эксперименты</a></li>
-                <li><a href="#results">Результаты</a></li>
-                <li><a href="https://lybra-bee.github.io/">← Основной сайт</a></li>
-            </ul>
-        </div>
-    </nav>
+## 🔬 Последние эксперименты
 
-    <main class="container">
-        <!-- Раздел с железом -->
-        <section id="hardware" class="hardware-section">
-            <h2>🖥️ Конфигурация системы</h2>
-            
-            <div class="hardware-grid">
-                <div class="hardware-item">
-                    <div class="hardware-icon">🔌</div>
-                    <h3>Материнская плата</h3>
-                    <p><strong>X99</strong> - серверная платформа</p>
-                    <small>LGA 2011-3, поддержка ECC памяти</small>
-                </div>
-                
-                <div class="hardware-item">
-                    <div class="hardware-icon">🚀</div>
-                    <h3>Процессор</h3>
-                    <p><strong>Intel Xeon E5 2650v4</strong></p>
-                    <small>12 ядер / 24 потока · 2.2 GHz · 30 MB cache · 105W TDP</small>
-                </div>
-                
-                <div class="hardware-item">
-                    <div class="hardware-icon">💾</div>
-                    <h3>Оперативная память</h3>
-                    <p><strong>DDR4 32GB</strong></p>
-                    <small>4x8GB · 2400 MHz · ECC Registered</small>
-                </div>
-                
-                <div class="hardware-item">
-                    <div class="hardware-icon">🎯</div>
-                    <h3>Вычислительная карта</h3>
-                    <p><strong>Inno3D P102-100 10GB</strong></p>
-                    <small>GP102 чип · 10GB GDDR5X · 320-bit · PCI-E x16</small>
-                </div>
-                
-                <div class="hardware-item">
-                    <div class="hardware-icon">🖥️</div>
-                    <h3>Карта вывода изображения</h3>
-                    <p><strong>Radeon 560</strong></p>
-                    <small>4GB GDDR5 · Подключена через PCI-E x1 райзер</small>
-                </div>
-            </div>
-            
-            <div class="system-notes">
-                <h3>💡 Особенности конфигурации:</h3>
-                <div class="notes-grid">
-                    <div class="note-item">
-                        <span class="note-icon">⚡</span>
-                        <span>P102-100 используется исключительно для вычислений в нейросетях</span>
-                    </div>
-                    <div class="note-item">
-                        <span class="note-icon">🎮</span>
-                        <span>Radeon 560 отвечает только за вывод изображения на монитор</span>
-                    </div>
-                    <div class="note-item">
-                        <span class="note-icon">🏢</span>
-                        <span>Серверная платформа X99 обеспечивает стабильность 24/7</span>
-                    </div>
-                    <div class="note-item">
-                        <span class="note-icon">🛡️</span>
-                        <span>ECC память предотвращает ошибки при длительных вычислениях</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="cards-grid">
+{% for experiment in site.experiments limit:3 %}
+<div class="card">
+    <h3>{{ experiment.title }}</h3>
+    <p><strong>📅 Дата:</strong> {{ experiment.date | date: "%d.%m.%Y" }}</p>
+    <p><strong>🎯 Статус:</strong> {{ experiment.status }}</p>
+    <p><strong>⚡ Производительность:</strong> {{ experiment.performance }}</p>
+    <p>{{ experiment.description }}</p>
+    <a href="{{ experiment.url }}" class="btn btn-outline">Подробнее →</a>
+</div>
+{% endfor %}
+</div>
 
-        <!-- Раздел с экспериментами -->
-        <section id="experiments" class="experiments-section">
-            <h2>🔬 Активные эксперименты</h2>
-            
-            <div class="experiment-card">
-                <div class="experiment-header">
-                    <h3>🎨 Stable Diffusion 1.5 - Первый запуск</h3>
-                    <span class="status-badge success">Завершен</span>
-                </div>
-                <p>Тестирование генерации изображений на P102-100 с разными промптами</p>
-                <div class="experiment-meta">
-                    <span class="date">📅 15 сентября 2025</span>
-                    <span class="performance">⚡ 12-18 сек/изображение</span>
-                    <a href="experiments/stable-diffusion-1.5.html" class="btn">Изучить эксперимент →</a>
-                </div>
-            </div>
+## 🛠️ [Конфигурация оборудования](/hardware.html)
 
-            <div class="experiment-card upcoming">
-                <div class="experiment-header">
-                    <h3>🤖 Запуск локальной LLM модели</h3>
-                    <span class="status-badge planning">В разработке</span>
-                </div>
-                <p>Тестирование языковых моделей на процессоре Xeon</p>
-                <div class="experiment-meta">
-                    <span class="date">📅 Октябрь 2025</span>
-                    <span class="performance">🔧 Подготовка датасетов</span>
-                </div>
-            </div>
+## 🔗 [Основной сайт Lybra Bee](https://lybra-bee.github.io/)
 
-            <div class="experiment-card upcoming">
-                <div class="experiment-header">
-                    <h3>📊 Сравнение производительности</h3>
-                    <span class="status-badge planning">Планируется</span>
-                </div>
-                <p>Бенчмарки разных нейросетей на P102-100 vs облачные решения</p>
-                <div class="experiment-meta">
-                    <span class="date">📅 Ноябрь 2025</span>
-                    <span class="performance">📈 Анализ cost/benefit</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Раздел с результатами -->
-        <section id="results" class="results-section">
-            <h2>📈 Последние результаты</h2>
-            <div class="results-grid">
-                <div class="result-item">
-                    <div class="result-value">14с</div>
-                    <div class="result-label">Среднее время генерации SD 1.5</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-value">8.5GB</div>
-                    <div class="result-label">Пиковое использование VRAM</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-value">72°C</div>
-                    <div class="result-label">Максимальная температура GPU</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-value">100%</div>
-                    <div class="result-label">Стабильность работы</div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Улучшенный подвал -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>🧪 Lybra AI Lab</h3>
-                    <p>Практические эксперименты с нейросетями на бюджетном железе</p>
-                </div>
-                <div class="footer-section">
-                    <h3>🔗 Ссылки</h3>
-                    <ul>
-                        <li><a href="https://lybra-bee.github.io/">Основной сайт</a></li>
-                        <li><a href="#hardware">Мое железо</a></li>
-                        <li><a href="#experiments">Эксперименты</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>📊 Статистика</h3>
-                    <ul>
-                        <li>🎯 Экспериментов: 1 завершен</li>
-                        <li>⚡ Генераций: 50+ изображений</li>
-                        <li>🕒 Работаем с: Сентябрь 2025</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Lybra AI Lab. Открытые эксперименты с нейросетями на бюджетном железе.</p>
-                <p>Сделано с ❤️ и ⚡ для сообщества AI</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<section id="about" style="margin-top: 4rem;">
+    <h2>🧪 О лаборатории</h2>
+    <div class="card">
+        <p>Lybra AI Lab - это персональная лаборатория для экспериментов с нейросетевыми моделями. Все эксперименты проводятся на собственном серверном оборудовании с вычислительной картой P102-100.</p>
+        <p>Основные направления исследований: генерация изображений, языковые модели, оптимизация производительности на нестандартном железе.</p>
+    </div>
+</section>
