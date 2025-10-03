@@ -1,22 +1,44 @@
 ---
 layout: default
 ---
-<article class="experiment-detail">
-    <header class="experiment-header">
-        <h1>{{ page.title }}</h1>
-        <div class="experiment-meta">
-            <span class="date">📅 {{ page.date | date: "%d %B %Y" }}</span>
-            {% if page.status %}
-            <span class="status-badge {{ page.status }}">{{ page.status_text | default: page.status }}</span>
-            {% endif %}
+
+<article class="experiment-page">
+    <div class="container">
+        <header class="experiment-header">
+            <nav class="breadcrumb">
+                <a href="{{ '/' | relative_url }}">Лаборатория</a> / <span>{{ page.title }}</span>
+            </nav>
+            
+            <h1 class="experiment-title">{{ page.title }}</h1>
+            
+            <div class="experiment-meta">
+                <div class="meta-item">
+                    <span class="meta-icon">📅</span>
+                    <span class="meta-text">{{ page.date | date: "%d.%m.%Y" }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">🎯</span>
+                    <span class="meta-text">{{ page.status }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">⚡</span>
+                    <span class="meta-text">{{ page.performance }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-icon">🖥️</span>
+                    <span class="meta-text">{{ page.hardware }}</span>
+                </div>
+            </div>
+            
+            <p class="experiment-description">{{ page.description }}</p>
+        </header>
+
+        <div class="experiment-content">
+            {{ content }}
         </div>
-    </header>
-
-    <div class="experiment-content">
-        {{ content }}
+        
+        <footer class="experiment-footer">
+            <a href="{{ '/' | relative_url }}" class="btn btn-outline">← Назад в лабораторию</a>
+        </footer>
     </div>
-
-    <footer class="experiment-footer">
-        <a href="{{ '/' | relative_url }}" class="btn">← Назад к экспериментам</a>
-    </footer>
 </article>
