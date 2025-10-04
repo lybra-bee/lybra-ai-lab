@@ -42,31 +42,31 @@ python launch.py --precision full --no-half \
 **Промпт:** "magical forest with glowing mushrooms, ancient ruins, misty atmosphere, fantasy art, detailed, epic composition, 4k"  
 **Параметры:** Steps: 20, Sampler: Euler a, CFG: 7.5  
 **Время генерации:** 14 секунд  
-![Фэнтези-пейзаж](/assets/images/experiments/sd15-experiment/fantasy-landscape.jpg)
+![Фэнтези-пейзаж]({{ "/assets/images/experiments/sd15-experiment/fantasy-landscape.jpg" | relative_url }})
 
 ### Промпт #2: Киберпанк-город
 **Промпт:** "cyberpunk city street at night, neon lights, rain, futuristic buildings, crowded, cinematic lighting, Blade Runner style"  
 **Параметры:** Steps: 25, Sampler: DPM++ 2M Karras, CFG: 8  
 **Время генерации:** 18 секунд  
-![Киберпанк-город](/assets/images/experiments/sd15-experiment/cyberpunk-city.jpg)
+![Киберпанк-город]({{ "/assets/images/experiments/sd15-experiment/cyberpunk-city.jpg" | relative_url }})
 
 ### Промпт #3: Портрет в стиле аниме
 **Промпт:** "anime girl with blue hair, school uniform, cherry blossoms in background, detailed eyes, masterpiece, best quality, anime art style"  
 **Параметры:** Steps: 22, Sampler: Euler a, CFG: 7  
 **Время генерации:** 12 секунд  
-![Аниме портрет](/assets/images/experiments/sd15-experiment/anime-portrait.jpg)
+![Аниме портрет]({{ "/assets/images/experiments/sd15-experiment/anime-portrait.jpg" | relative_url }})
 
 ### Промпт #4: Научная фантастика
 **Промпт:** "futuristic space station interior, advanced technology, clean design, astronauts, zero gravity, sci-fi, realistic, detailed"  
 **Параметры:** Steps: 25, Sampler: DPM++ 2M Karras, CFG: 8.5  
 **Время генерации:** 16 секунд  
-![Космическая станция](/assets/images/experiments/sd15-experiment/sci-fi-station.jpg)
+![Космическая станция]({{ "/assets/images/experiments/sd15-experiment/sci-fi-station.jpg" | relative_url }})
 
 ### Промпт #5: Реалистичный пейзаж
 **Промпт:** "mountain landscape at sunrise, photorealistic, dramatic lighting, sharp focus, professional photography, 8k"  
 **Параметры:** Steps: 20, Sampler: Euler a, CFG: 7.0  
 **Время генерации:** 13 секунд  
-![Реалистичный пейзаж](/assets/images/experiments/sd15-experiment/mountain-landscape.jpg)
+![Реалистичный пейзаж]({{ "/assets/images/experiments/sd15-experiment/mountain-landscape.jpg" | relative_url }})
 
 ## 📊 Анализ производительности
 
