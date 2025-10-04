@@ -74,7 +74,7 @@ python launch.py --precision full --no-half \
 - Использование памяти GPU: 8.2-8.8 GB из 10 GB  
 - Загрузка процессора: 15-25% во время генерации  
 - Температура GPU: 68-74°C под нагрузкой  
-![Мониторинг системы](/assets/images/experiments/sd15-experiment/system-monitor.jpg)
+![Мониторинг системы]({{ "/assets/images/experiments/sd15-experiment/system-monitor.jpg" | relative_url }})
 
 ## 💡 Выводы и наблюдения
 
