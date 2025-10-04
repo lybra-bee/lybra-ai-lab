@@ -4,6 +4,18 @@
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="google-site-verification" content="qHNHO0VlQ69kLt5M2XBlhsvlnn6imVfWlqRUsYRpsrM" />
+    <meta name="yandex-verification" content="1234567890abcdef" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <!-- Микроразметка Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{ page.title | default: site.title }}",
+      "description": "{{ page.description | default: site.description }}",
+      "url": "{{ site.url }}{{ page.url }}"
+    }
+    </script>
     
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
