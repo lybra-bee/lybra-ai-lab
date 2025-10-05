@@ -34,6 +34,6 @@ navigation:
   - title: "🖥️ Лаборатория"
     url: /
   - title: "🔌 Оборудование"
-    url: /hardware.html  # ← добавить baseurl
+    url: /hardware
   - title: "🏠 Основной сайт"
     url: https://lybra-bee.github.io/
