@@ -1,4 +1,6 @@
 title: "Lybra AI Lab"
+logo: "/assets/images/logos/logo.png"  # или ваш путь к лого
+favicon: "/assets/images/favicon.ico"
 description: "Лаборатория экспериментов с нейросетями"
 baseurl: "/lybra-ai-lab"
 url: "https://lybra-bee.github.io"
