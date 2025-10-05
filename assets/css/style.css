@@ -100,11 +100,10 @@ img {
 
 /* Header */
 .logo-img {
-  display: block;
-  max-height: 50px; /* или нужный размер */
-  max-width: 100%;
-  height: auto;
-  width: auto;
+    width: auto;
+    height: 40px;
+    max-width: 100%;
+    display: block;
 }
 
 .site-header {
