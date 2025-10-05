@@ -99,6 +99,14 @@ img {
 }
 
 /* Header */
+.logo-img {
+  display: block;
+  max-height: 50px; /* или нужный размер */
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
 .site-header {
     background: var(--secondary-color);
     border-bottom: 1px solid var(--border-color);
