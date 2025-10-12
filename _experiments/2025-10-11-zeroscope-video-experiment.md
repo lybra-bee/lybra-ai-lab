@@ -126,7 +126,7 @@ print(done_msg)
   Ваш браузер не поддерживает воспроизведение видео.
 </video>
 
-Затем 5 кусков по 5 кадров и собрал в одно видео:
+Затем 250 кадров и собрал в одно видео:
 
 <video width="512" height="512" controls>
   <source src="{{ '/assets/videos/video2.mp4' | relative_url }}" type="video/mp4">
