@@ -8,7 +8,8 @@ layout: default
             <h1 class="hero-title">{{ site.title }}</h1>
             <p class="hero-description">{{ site.description }}</p>
             <div class="hero-actions">
-                <a href="#experiments" class="btn btn-primary">Смотреть эксперименты</a>
+                <!-- Исправленная ссылка на эксперименты -->
+                <a href="{{ '/experiments/' | relative_url }}" class="btn btn-primary">Смотреть эксперименты</a>
                 <a href="{{ '/hardware' | relative_url }}" class="btn btn-secondary">Оборудование</a>
             </div>
         </div>
