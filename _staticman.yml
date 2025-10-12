@@ -1,0 +1,9 @@
+# _staticman.yml
+production:
+  branch: main
+  commit_message: "Новый комментарий от {fields.name}"
+  pull_request: false
+  allowed_fields: ["name", "email", "comment"]
+  file_name: "{timestamp}-{name}"
+  path: "_data/comments"
+  moderation: true
