@@ -4,16 +4,7 @@ title: "Lybra AI Lab"
 description: "Лаборатория экспериментов с нейросетями"
 ---
 
-<div class="hero">
-  <div class="hero-content container">
-    <h1 class="hero-title">🧪 Lybra AI Lab</h1>
-    <p class="hero-description">Персональная лаборатория экспериментов с нейросетями. Генерация изображений, видео, озвучка и тестирование ИИ на нестандартном оборудовании.</p>
-    <div class="hero-actions">
-      <a href="{{ '/experiments/' | relative_url }}" class="btn btn-primary">Смотреть эксперименты</a>
-      <a href="/hardware.html" class="btn btn-secondary">Конфигурация оборудования</a>
-    </div>
-  </div>
-</div>
+{% include hero-block.html %}
 
 <div class="cards-grid" style="margin-top:2rem;">
 {% for experiment in site.experiments limit:3 %}
