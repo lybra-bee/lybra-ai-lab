@@ -15,7 +15,7 @@ description: "Лаборатория экспериментов с нейрос�
   </div>
 </div>
 
-<div class="cards-grid">
+<div class="cards-grid" style="margin-top:2rem;">
 {% for experiment in site.experiments limit:3 %}
 <div class="card">
     <h3>{{ experiment.title }}</h3>
