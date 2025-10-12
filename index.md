@@ -12,7 +12,8 @@ description: "Лаборатория экспериментов с нейрос�
     <p><strong>🎯 Статус:</strong> {{ experiment.status }}</p>
     <p><strong>⚡ Производительность:</strong> {{ experiment.performance }}</p>
     <p>{{ experiment.description }}</p>
-    <a href="{{ experiment.url | relative_url }}" class="text-accent hover:underline">Подробнее →</a>
+    <a href="{{ '/experiments/' | relative_url }}" class="btn btn-primary">Смотреть эксперименты</a>
+ }}" class="text-accent hover:underline">Подробнее →</a>
 </div>
 {% endfor %}
 </div>
