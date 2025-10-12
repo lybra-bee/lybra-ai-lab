@@ -121,14 +121,14 @@ print(done_msg)
 
 Сначала сделал 5 кадров, для эксперимента:
 
-<video width="512" height="512" controls>
+<video width="256" height="256" controls>
   <source src="{{ '/assets/videos/video1.mp4' | relative_url }}" type="video/mp4">
   Ваш браузер не поддерживает воспроизведение видео.
 </video>
 
 Затем 250 кадров и собрал в одно видео:
 
-<video width="512" height="512" controls>
+<video width="256" height="256" controls>
   <source src="{{ '/assets/videos/video2.mp4' | relative_url }}" type="video/mp4">
   Ваш браузер не поддерживает воспроизведение видео.
 </video>
