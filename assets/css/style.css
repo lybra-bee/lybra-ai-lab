@@ -491,4 +491,8 @@ img {
     color: var(--accent-color);
     margin-bottom: 1rem;
 }
+#comments { margin-top: 40px; }
+#comments form { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+#comments input, #comments textarea { width: 100%; padding: 8px; }
+.comment { border-bottom: 1px solid #ccc; padding: 10px 0; }
 
