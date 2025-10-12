@@ -4,8 +4,7 @@ title: "Lybra AI Lab"
 description: "Лаборатория экспериментов с нейросетями"
 ---
 
-{% include hero-block.html %}
-
+<!-- Убираем лишний блок hero -->
 <div class="cards-grid" style="margin-top:2rem;">
 {% for experiment in site.experiments limit:3 %}
 <div class="card">
