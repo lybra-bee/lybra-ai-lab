@@ -465,3 +465,30 @@ img {
         grid-template-columns: 1fr;
     }
 }
+/* Lab Page */
+.experiments-list h2 {
+    margin-top: 2rem;
+    color: var(--accent-color);
+    text-align: center;
+}
+
+.lab-info ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.lab-info li {
+    margin-bottom: 0.5rem;
+}
+
+.lab-about .card {
+    background: var(--secondary-color);
+    border-left: 4px solid var(--accent-color);
+}
+
+.lab-about h2 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
