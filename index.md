@@ -17,9 +17,12 @@ description: "Лаборатория экспериментов с нейрос�
     <p><strong>⚡ Производительность:</strong> {{ experiment.performance }}</p>
     {% endif %}
     <p>{{ experiment.description }}</p>
-    <a href="{{ '/experiments/' | relative_url }}" class="btn btn-secondary">Смотреть все эксперименты →</a>
+    <!-- ИСПРАВЛЕННАЯ ССЫЛКА: ведет на сам эксперимент -->
+    <a href="{{ experiment.url | relative_url }}" class="btn btn-secondary">Подробнее об эксперименте →</a>
 </div>
 {% endfor %}
 </div>
 
-## 🔗 [Основной сайт Lybra-ai (https://lybra-ai.ru/)
+<!-- Добавляем кнопку для просмотра всех экспериментов -->
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="{{ '/experiments/'
