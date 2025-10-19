@@ -166,7 +166,7 @@ Deforum — это расширение для **Stable Diffusion WebUI (AUTOMAT
 - Полный рендер 180 кадров (12 fps → 15 секунд).
 
  <video width="312" height="312" controls>
-  <source src="{{ '/assets/videos/video2.mp4' | relative_url }}" type="video/mp4">
+  <source src="{{ '/assets/videos/video3.mp4' | relative_url }}" type="video/mp4">
   Ваш браузер не поддерживает воспроизведение видео.
  </video>
 
