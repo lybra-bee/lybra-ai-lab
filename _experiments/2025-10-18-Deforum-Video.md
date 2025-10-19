@@ -3,7 +3,7 @@ layout: experiment
 title: "Эксперимент с Deforum и Stable Diffusion WebUI" 
 date: 2025-10-19 
 status: completed 
-performance: "≈15 секунд на кадр (512x512), итоговое видео ≈12 секунд"
+performance: "≈55 секунд на кадр (512x512), итоговое видео ≈12 секунд"
 hardware: "NVIDIA P102-100 10GB + Xeon E5-2650v4, Linux Mint 22.2"
 description: "Пошаговый отчёт об установке и экспериментах с Deforum — плагином для анимации Stable Diffusion, создании видео из текста и решении возникающих ошибок."
 ---
