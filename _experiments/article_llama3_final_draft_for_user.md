@@ -1,3 +1,11 @@
+---
+layout: experiment
+title: "Битва за VRAM: Запуск Llama 3 8B на 8GB VRAM. Сравнение GGUF и Q-LoRA на P102-100"
+date: 2025-11-08
+status: success
+hardware: "P102-100 10GB + Xeon E5 2650v4"
+description: "Сравнение GGUF и Q-LoRA на P102-100"
+---
 # Битва за VRAM: Запуск Llama 3 8B на 8GB VRAM. Сравнение GGUF и Q-LoRA на P102-100.
 
 ## Введение: Когда 10GB — это 8GB
